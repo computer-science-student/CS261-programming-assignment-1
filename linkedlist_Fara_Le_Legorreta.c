@@ -5,7 +5,7 @@
 
 struct Node {
     int data;
-    struct Node* link;
+    //struct Node* link; // This was used for the singley linked list
 };
 
 struct Node* head;
