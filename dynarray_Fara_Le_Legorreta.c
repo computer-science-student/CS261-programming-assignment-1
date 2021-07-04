@@ -143,7 +143,7 @@ void create_student_pointers(int c){
     // D = malloc(sizeof(struct dynArray));
     //struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
 
-    // create three students
+    // Create three students
     struct student student1;
     student1.name = "Name";
     student1.points = 10;
