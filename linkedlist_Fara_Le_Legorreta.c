@@ -135,6 +135,7 @@ void disp() {
 
 
 void test() {
+    //printf("This is from linked list!\n");
     struct Node* n1 = malloc(sizeof(struct Node));
     n1->data = 10; n1->link = NULL; insert(n1, NULL); disp();
     struct Node* n2 = malloc(sizeof(struct Node));

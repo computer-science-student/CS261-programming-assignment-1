@@ -41,6 +41,7 @@ void test();
 
 // Main function
 int main() {
+    printf("This is from dynamic array!");
 	D = malloc(sizeof(struct dynArray));
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
