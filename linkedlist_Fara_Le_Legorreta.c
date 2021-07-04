@@ -11,7 +11,7 @@ struct Node {
 struct Node* head;
 struct Node* tail;
 
-
+// Function protoypes
 void insert(struct Node*, struct Node*);
 void delete(struct Node*, struct Node*);
 void _insert1(struct Node*);
@@ -33,6 +33,7 @@ int main() {
     cleanup();
     return 0;
 }
+
 
 
 void init() {
