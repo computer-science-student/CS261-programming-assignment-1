@@ -182,6 +182,7 @@ void test() {
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
     student1->name = "Name";
     student1->points = 10;
+    add(student1);
 
 
 	//add(); add(); add(); disp();
