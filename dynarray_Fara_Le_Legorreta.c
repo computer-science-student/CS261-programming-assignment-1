@@ -25,6 +25,10 @@ struct student* array_of_pointers[];
 // pointers will point to a student struct in the heap.
 // Should array_of_pointers be renamed array_of_stu_ptrs?
 
+// Put the global student pointers.
+struct student *student1; // a student is a pointer
+
+
 // Define the function prototypes.
 void add(void*); // Is this parameter implemented correctly?
 void init(int);
@@ -137,11 +141,16 @@ void cleanup() {
     //printf("137\n");
 	assert(D->data);
 	free(D->data);
+
+	// free student1 from the heap.
+	assert(student1)
+	free(student1);
+
 	D->data = NULL;
 	D->size = 0;
 	D->capacity = 0;
 }
-struct student *student1; // a student is a pointer
+
 
 void disp() {
     // now the data is a structure of students.
@@ -187,6 +196,10 @@ void test() {
     //printf("After add\n");
 
     disp();
+
+    // Make a second student.
+
+
 
 	//add(); add(); add(); disp();
 /*	add(40); disp();
