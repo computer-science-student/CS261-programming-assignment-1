@@ -147,9 +147,11 @@ void disp() {
 	int i;
     struct student *ptr;
 	for (i=0; i<D->size; i++) {
-        ptr = D->data[i];
-		printf("%d\t", ptr->points);
+            printf("hello world\n");
+            ptr = D->data[i];
+            printf("%d\t", ptr->points);
 	}
+	printf("hello world\n");
 	printf("\n");
 	printf("capacity = %d, size = %d\n", D->capacity, D->size);
 
