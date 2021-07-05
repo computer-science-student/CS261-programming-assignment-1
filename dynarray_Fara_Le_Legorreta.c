@@ -62,7 +62,6 @@ void init(int c) {
 	D->data = malloc(D->capacity * sizeof(struct student*)); // typecast this later
 }
 
-struct student *student1; // a student is a pointer
 
 void add(void* student1) { // Is this parameter correctly written?
     printf("Add function was called here\n");
@@ -169,6 +168,7 @@ void disp() {
     }
 }
 
+struct student *student1; // a student is a pointer
 
 void test() {
 	disp();
