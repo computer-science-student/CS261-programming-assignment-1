@@ -146,8 +146,11 @@ void cleanup() {
 void disp() {
     // now the data is a structure of students.
 	int i;
-    struct student *ptr;
+
+	struct student *ptr; // this use to be here
+
     printf("%d\n", D->size);
+
 	for (i=0; i< D->size; i++) {
             printf("hello world 1\n");
             ptr = D->data[i];
@@ -188,11 +191,12 @@ void create_student_pointers(int c){
 
 
 void test() {
-	//disp();
+	disp();
 	// The parameters to add should be void*.
 	// type arrayName [ arraySize ];
 	//create_student_pointers(D->capacity); // commented this out because not sure what it is for.
 
+	//struct student *ptr;
     // Add the data for this student!
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
     student1->name = "Name";
