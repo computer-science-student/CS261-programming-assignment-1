@@ -70,9 +70,8 @@ void add(void* value) { // Is this parameter correctly written?
     // Add the data for this student!
 
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
-    //student1->name = "Name";
+    student1->name = "Name";
     student1->points = 10;
-
 
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
@@ -106,7 +105,7 @@ void delete(int index) {
 
 void _resize(int c) {
 	int i;
-	int* newdata = malloc(c * sizeof(int));
+	int* newdata = (int *)malloc(c * sizeof(int)); // always typecast malloc
 	assert(newdata);
 	D->capacity = c;
 	for (i=0; i<D->size; i++) {
@@ -151,7 +150,7 @@ void disp() {
 	/*    char* name;
     int points;
     */
-    //printf("Name: %s and score: %d", student1.name, student1.score);
+    printf("Name: %s and score: %p", student1->name, student1->points);
 }
 
 void create_student_pointers(int c){
