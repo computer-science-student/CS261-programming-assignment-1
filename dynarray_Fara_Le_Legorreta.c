@@ -149,6 +149,8 @@ void disp() {
 
 	struct student *ptr; // this use to be here
 
+	printf("capacity = \"%d\", size = \"%d\"\n", D->capacity, D->size);
+
 	for (i=0; i< D->size; i++) {
             ptr = D->data[i];
             printf("Student #: %d ", i);
@@ -158,7 +160,7 @@ void disp() {
 	}
 	//printf("hello world\n");
 	printf("\n");
-	//printf("capacity = \"%d\", size = \"%d\"\n", D->capacity, D->size);
+
 
 	/*    char* name;
     int points;
@@ -185,7 +187,6 @@ void test() {
     //printf("After add\n");
 
     disp();
-
 
 	//add(); add(); add(); disp();
 /*	add(40); disp();
