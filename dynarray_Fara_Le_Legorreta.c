@@ -89,9 +89,9 @@ void set(void* value, int index) {
 }
 
 void delete(int index) {
-    printf("93\n");
+    //printf("93\n");
 	assert(index >= 0);
-	printf("95\n");
+	//printf("95\n");
 	assert(index < D->size);
 	int i;
 	for (i=index+1; i<D->size; i++) {
@@ -134,7 +134,7 @@ void insert(void* value, int index) {
 // Free all the data from the heap.
 // Set size and capacity to 0.
 void cleanup() {
-    printf("137\n");
+    //printf("137\n");
 	assert(D->data);
 	free(D->data);
 	D->data = NULL;
