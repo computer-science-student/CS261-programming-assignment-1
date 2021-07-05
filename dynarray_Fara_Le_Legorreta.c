@@ -26,13 +26,7 @@ struct student* array_of_pointers[];
 // Should array_of_pointers be renamed array_of_stu_ptrs?
 
 
-// Make the first student global
-struct student *student1; // a student is a pointer
-// Add the data for this student!
 
-//student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
-//student1->name = "Name";
-//student1->points = 10;
 
 
 // Define the function prototypes.
@@ -71,6 +65,14 @@ void init(int c) {
 }
 
 void add(void* value) { // Is this parameter correctly written?
+    struct student *student1; // a student is a pointer
+    // Add the data for this student!
+
+    student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
+    //student1->name = "Name";
+    student1->points = 10;
+
+
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
 	}
@@ -148,7 +150,7 @@ void disp() {
 	/*    char* name;
     int points;
     */
-    //printf("Name: %s and score: %d", student1.name, student1.score);
+    printf("Name: %s and score: %d", student1.name, student1.score);
 }
 
 void create_student_pointers(int c){
