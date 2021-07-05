@@ -169,29 +169,6 @@ void disp() {
     }
 }
 
-void create_student_pointers(int c){
-    // This function creates an array of student pointers.
-    // The array is of size c.
-    // Should I put this in the heap?
-    // D = malloc(sizeof(struct dynArray));
-    //struct student* student_pointers[D->capacity]; // student pointers have same capacity as D.
-
-    // Create three students
-    struct student student2;
-    struct student student3;
-
-    //student_pointer[0] = &a_student;
-
-    //for (int i=0; i <D->capacity; i++) {
-        // put the student pointers in.
-        //printf("index: %d\n", i);
-        // initalize the student.
-        //student_pointers[i] = array_of_pointers[i]; // set to regular student?
-
-    //}
-
-}
-
 
 void test() {
 	disp();
