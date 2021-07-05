@@ -43,14 +43,14 @@ int main() {
 	printf("student1 location: %p\n", &student1);
 	printf("student1 contents: %p\n", student1);
 	printf("student1->name location: %p\n", &(student1->name));
-        printf("student1->name contents: %s\n", student1->name);
+    printf("student1->name contents: %s\n", student1->name);
 	printf("student1->points location: %p\n", &(student1->points));
 	printf("student1->points contents: %d\n", student1->points);
 
 	add(student1);
 
 	printf("D->data[0]: %p\n", D->data[0]);
-	//printf("D->data[0]->name contents: %s\n", D->data[0]->name);
+	printf("D->data[0]->name contents: %s\n", D->data[0]->name);
 
 //	printf("\nJust after init()\n");
 //	printf("D address: %p\n", &D);
@@ -125,11 +125,11 @@ void delete(int index) {
 }
 */
 
-void add(void* student) {
+void add(void* student1) {
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
 	}
-	D->data[D->size] = student;
+	D->data[D->size] = student1;
 //	D->size++;
 }
 

@@ -55,7 +55,7 @@ int main() {
 
 // Initialize dynamic array. This is like a constructor.
 void init(int c) {
-    printf("58\n");
+    //printf("58\n");
     //assert(c); // Is this assert really needed?
 	D->capacity = c;
 	D->size = 0;
@@ -118,7 +118,7 @@ void _resize(int c) {
 }
 
 void insert(void* value, int index) {
-    printf("119\n");
+    //printf("119\n");
 	assert(index >= 0);
 	printf("121\n");
 	assert(index < D->size);
