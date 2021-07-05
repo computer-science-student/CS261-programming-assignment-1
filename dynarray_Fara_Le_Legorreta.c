@@ -25,10 +25,6 @@ struct student* array_of_pointers[];
 // pointers will point to a student struct in the heap.
 // Should array_of_pointers be renamed array_of_stu_ptrs?
 
-
-
-
-
 // Define the function prototypes.
 void add(void*); // Is this parameter implemented correctly?
 void init(int);
@@ -46,7 +42,8 @@ void test();
 // Main function
 int main() {
     //printf("This is from dynamic array!");
-	D = malloc(sizeof(struct dynArray));
+	D = (struct dynArray *)malloc(sizeof(struct dynArray));
+	printf();
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
 	test();
