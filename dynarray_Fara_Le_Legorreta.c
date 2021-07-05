@@ -43,7 +43,7 @@ void test();
 int main() {
     //printf("This is from dynamic array!");
 	D = (struct dynArray *)malloc(sizeof(struct dynArray));
-	printf("46\n");
+	//printf("46\n");
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
 	test();
@@ -59,7 +59,7 @@ void init(int c) {
     //assert(c); // Is this assert really needed?
 	D->capacity = c;
 	D->size = 0;
-	D->data = malloc(D->capacity * sizeof(struct student*));
+	D->data = malloc(D->capacity * sizeof(struct student*)); // typecast this later
 }
 
 struct student *student1; // a student is a pointer
@@ -104,6 +104,7 @@ void delete(int index) {
 
 
 void _resize(int c) {
+    /*
 	int i;
 	int* newdata = (int *)malloc(c * sizeof(int)); // always typecast malloc
 	printf("108\n");
@@ -113,7 +114,7 @@ void _resize(int c) {
 		newdata[i] = D->data[i];
 	}
 	free(D->data);
-	D->data = newdata;
+	D->data = newdata;*/
 }
 
 void insert(void* value, int index) {
@@ -201,8 +202,8 @@ void test() {
 	//struct student *ptr;
     // Add the data for this student!
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
-    student1->name = "Name";
-    student1->points = 100;
+    student1->name = "Jacque";
+    student1->points = 40;
     //printf("Before add\n");
     add(student1);
     //printf("After add\n");
