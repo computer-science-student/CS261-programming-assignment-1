@@ -150,20 +150,22 @@ void disp() {
 	struct student *ptr; // this use to be here
 
 	for (i=0; i< D->size; i++) {
-            printf("hello world 1\n");
             ptr = D->data[i];
-            printf("Student points: %d\t", ptr->points);
+            printf("Student #: %d ", i);
+            printf("Student name: \"%s\" and score: \"%d\"\n", ptr->name, ptr->points);
+
+            //printf("Student points: %d\t", ptr->points);
 	}
 	//printf("hello world\n");
 	printf("\n");
-	printf("capacity = \"%d\", size = \"%d\"\n", D->capacity, D->size);
+	//printf("capacity = \"%d\", size = \"%d\"\n", D->capacity, D->size);
 
 	/*    char* name;
     int points;
     */
-    if (D-> size > 0){ // if size is greater than 0
-        printf("Name: \"%s\" and score: \"%d\"\n", student1->name, student1->points);
-    }
+    //if (D-> size > 0){ // if size is greater than 0
+      //  printf("Name: \"%s\" and score: \"%d\"\n", student1->name, student1->points);
+    //}
 }
 
 
