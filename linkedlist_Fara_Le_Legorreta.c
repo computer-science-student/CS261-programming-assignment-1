@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include <assert.h>
 
-
 struct Node {
     struct Node* prev;
     int data;
-    //struct Node* link; // This was used for the singley linked list
+    //struct Node* link; // This was used for the singly linked list
     struct Node* next;
 };
 
@@ -36,22 +35,18 @@ int main() {
     return 0;
 }
 
-
-
-void init() {
+void init(){
     head = tail = NULL;
 }
-
 
 void cleanup() {
     struct Node* temp;
     while (head != NULL) {
         temp = head;
-        head = head->link;
+        head = head->next;
         free(temp);
     }
 }
-
 
 void _insert1(struct Node* curr) {
     if (head == NULL) {
