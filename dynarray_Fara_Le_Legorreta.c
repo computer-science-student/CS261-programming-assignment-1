@@ -146,8 +146,8 @@ void disp() {
     // now the data is a structure of students.
 	int i;
     struct student *ptr;
-	for (i=0; i<D->size; i++) {
-            printf("hello world\n");
+	for (i=0; i< D->size; i++) {
+            printf("hello world 1\n");
             ptr = D->data[i];
             printf("%d\t", ptr->points);
 	}
