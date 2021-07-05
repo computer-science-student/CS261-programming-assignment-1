@@ -43,7 +43,7 @@ void test();
 int main() {
     //printf("This is from dynamic array!");
 	D = (struct dynArray *)malloc(sizeof(struct dynArray));
-	printf();
+	printf("46\n");
 	assert(D); // checks if the condition is null or not. If null stop program, else continue.
  	init(4); // This is used to create the array
 	test();
@@ -55,7 +55,8 @@ int main() {
 
 // Initialize dynamic array. This is like a constructor.
 void init(int c) {
-    assert(c);
+    printf("58\n");
+    //assert(c); // Is this assert really needed?
 	D->capacity = c;
 	D->size = 0;
 	D->data = malloc(D->capacity * sizeof(struct student*));
@@ -73,19 +74,25 @@ void add(void* student1) { // Is this parameter correctly written?
 }
 
 void* get(int index) {
+    printf("77\n");
 	assert(index >= 0);
+	printf("79\n");
 	assert(index < D->size);
 	return D->data[index];
 }
 
 void set(void* value, int index) {
+    printf("85\n");
 	assert(index >= 0);
+	printf("87\n");
 	assert(index < D->size);
 	D->data[index] = value;
 }
 
 void delete(int index) {
+    printf("93\n");
 	assert(index >= 0);
+	printf("95\n");
 	assert(index < D->size);
 	int i;
 	for (i=index+1; i<D->size; i++) {
@@ -98,6 +105,7 @@ void delete(int index) {
 void _resize(int c) {
 	int i;
 	int* newdata = (int *)malloc(c * sizeof(int)); // always typecast malloc
+	printf("108\n");
 	assert(newdata);
 	D->capacity = c;
 	for (i=0; i<D->size; i++) {
@@ -108,7 +116,9 @@ void _resize(int c) {
 }
 
 void insert(void* value, int index) {
+    printf("119\n");
 	assert(index >= 0);
+	printf("121\n");
 	assert(index < D->size);
 	int i;
 	if (D->size == D->capacity) {
@@ -124,6 +134,7 @@ void insert(void* value, int index) {
 // Free all the data from the heap.
 // Set size and capacity to 0.
 void cleanup() {
+    printf("137\n");
 	assert(D->data);
 	free(D->data);
 	D->data = NULL;
