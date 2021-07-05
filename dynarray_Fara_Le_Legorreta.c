@@ -149,8 +149,6 @@ void disp() {
 
 	struct student *ptr; // this use to be here
 
-    printf("%d\n", D->size);
-
 	for (i=0; i< D->size; i++) {
             printf("hello world 1\n");
             ptr = D->data[i];
