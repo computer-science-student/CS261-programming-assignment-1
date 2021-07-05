@@ -4,8 +4,10 @@
 
 
 struct Node {
+    struct Node* prev;
     int data;
     //struct Node* link; // This was used for the singley linked list
+    struct Node* next;
 };
 
 struct Node* head;
