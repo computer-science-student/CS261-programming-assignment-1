@@ -184,7 +184,7 @@ void test() {
 	//struct student *ptr;
     // Add the data for this student!
     // Put the global student pointers.
-    struct student *student1; // a student is a pointer
+    struct student *student1; // student1 is a student pointer
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
     student1->name = "Jacque";
     student1->points = 40;
