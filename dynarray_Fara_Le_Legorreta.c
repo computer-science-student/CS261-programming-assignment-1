@@ -65,6 +65,7 @@ void init(int c) {
 struct student *student1; // a student is a pointer
 
 void add(void* student1) { // Is this parameter correctly written?
+    printf("Add function was called here\n");
 
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
@@ -150,7 +151,7 @@ void disp() {
 	for (i=0; i< D->size; i++) {
             printf("hello world 1\n");
             ptr = D->data[i];
-            printf("%d\t", ptr->points);
+            printf("Student points: %d\t", ptr->points);
 	}
 	printf("hello world\n");
 	printf("\n");
@@ -187,7 +188,7 @@ void create_student_pointers(int c){
 
 
 void test() {
-	disp();
+	//disp();
 	// The parameters to add should be void*.
 	// type arrayName [ arraySize ];
 	//create_student_pointers(D->capacity); // commented this out because not sure what it is for.
@@ -196,7 +197,9 @@ void test() {
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
     student1->name = "Name";
     student1->points = 10;
+    printf("Before add\n");
     add(student1);
+    printf("After add\n");
 
     disp();
 
