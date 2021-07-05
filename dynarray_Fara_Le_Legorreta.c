@@ -64,8 +64,9 @@ void init(int c) {
 	D->data = malloc(D->capacity * sizeof(struct student*));
 }
 
+struct student *student1; // a student is a pointer
+
 void add(void* value) { // Is this parameter correctly written?
-    struct student *student1; // a student is a pointer
     // Add the data for this student!
 
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
@@ -150,7 +151,7 @@ void disp() {
 	/*    char* name;
     int points;
     */
-    printf("Name: %s and score: %d", student1.name, student1.score);
+    //printf("Name: %s and score: %d", student1.name, student1.score);
 }
 
 void create_student_pointers(int c){
