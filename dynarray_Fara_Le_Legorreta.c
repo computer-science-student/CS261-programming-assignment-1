@@ -63,7 +63,7 @@ void init(int c) {
 }
 
 void add(void* student1) { // Is this parameter correctly written?
-    printf("Add function was called here\n");
+    //printf("Add function was called here\n");
 
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
