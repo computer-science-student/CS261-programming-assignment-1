@@ -25,8 +25,7 @@ struct student* array_of_pointers[];
 // pointers will point to a student struct in the heap.
 // Should array_of_pointers be renamed array_of_stu_ptrs?
 
-// Put the global student pointers.
-struct student *student1; // a student is a pointer
+
 
 
 // Define the function prototypes.
@@ -142,10 +141,6 @@ void cleanup() {
 	assert(D->data);
 	free(D->data);
 
-	// free student1 from the heap.
-	assert(student1)
-	free(student1);
-
 	D->data = NULL;
 	D->size = 0;
 	D->capacity = 0;
@@ -188,6 +183,8 @@ void test() {
 
 	//struct student *ptr;
     // Add the data for this student!
+    // Put the global student pointers.
+    struct student *student1; // a student is a pointer
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
     student1->name = "Jacque";
     student1->points = 40;
@@ -209,4 +206,9 @@ void test() {
 	insert(35, 5); disp();
 	add(70); disp();*/
 	delete(0); //disp();
+
+
+	// free student1 from the heap.
+	assert(student1);
+	free(student1);
 }
