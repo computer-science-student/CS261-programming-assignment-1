@@ -145,8 +145,10 @@ void cleanup() {
 void disp() {
     // now the data is a structure of students.
 	int i;
+    struct student *ptr;
 	for (i=0; i<D->size; i++) {
-            printf("%d\t", D->data[i]->points);
+        ptr = D->data[i];
+		printf("%d\t", ptr->points);
 	}
 	printf("\n");
 	printf("capacity = %d, size = %d\n", D->capacity, D->size);
@@ -192,6 +194,8 @@ void test() {
     student1->name = "Name";
     student1->points = 10;
     add(student1);
+
+    disp();
 
 
 	//add(); add(); add(); disp();
