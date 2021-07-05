@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 // Struct for the dynamic array
 struct dynArray {
@@ -29,9 +30,8 @@ struct student* array_of_pointers[];
 struct student *student1; // a student is a pointer
 // Add the data for this student!
 
-student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
-
-student1->name = "Name";
+//student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
+//student1->name = "Name";
 //student1->points = 10;
 
 
@@ -148,7 +148,7 @@ void disp() {
 	/*    char* name;
     int points;
     */
-    printf("Name: %s and score: %d", student1.name, student1.score);
+    //printf("Name: %s and score: %d", student1.name, student1.score);
 }
 
 void create_student_pointers(int c){
