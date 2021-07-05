@@ -66,17 +66,12 @@ void init(int c) {
 
 struct student *student1; // a student is a pointer
 
-void add(void* value) { // Is this parameter correctly written?
-    // Add the data for this student!
-
-    student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
-    student1->name = "Name";
-    student1->points = 10;
+void add(void* student1) { // Is this parameter correctly written?
 
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
 	}
-	D->data[D->size] = value;
+	D->data[D->size] = student1;
 	D->size++;
 }
 
@@ -182,6 +177,12 @@ void test() {
 	// The parameters to add should be void*.
 	// type arrayName [ arraySize ];
 	create_student_pointers(D->capacity);
+
+    // Add the data for this student!
+    student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
+    student1->name = "Name";
+    student1->points = 10;
+
 
 	//add(); add(); add(); disp();
 /*	add(40); disp();
