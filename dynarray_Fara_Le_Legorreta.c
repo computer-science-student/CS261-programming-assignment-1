@@ -182,13 +182,13 @@ void create_student_pointers(int c){
 
     //student_pointer[0] = &a_student;
 
-    for (int i=0; i <D->capacity; i++) {
+    //for (int i=0; i <D->capacity; i++) {
         // put the student pointers in.
         //printf("index: %d\n", i);
         // initalize the student.
         //student_pointers[i] = array_of_pointers[i]; // set to regular student?
 
-    }
+    //}
 
 }
 
