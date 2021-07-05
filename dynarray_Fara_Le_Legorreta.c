@@ -196,10 +196,10 @@ void test() {
     // Add the data for this student!
     student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
     student1->name = "Name";
-    student1->points = 10;
-    printf("Before add\n");
+    student1->points = 100;
+    //printf("Before add\n");
     add(student1);
-    printf("After add\n");
+    //printf("After add\n");
 
     disp();
 
