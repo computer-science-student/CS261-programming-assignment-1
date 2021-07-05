@@ -156,14 +156,16 @@ void disp() {
             ptr = D->data[i];
             printf("Student points: %d\t", ptr->points);
 	}
-	printf("hello world\n");
+	//printf("hello world\n");
 	printf("\n");
-	printf("capacity = %d, size = %d\n", D->capacity, D->size);
+	printf("capacity = \"%d\", size = \"%d\"\n", D->capacity, D->size);
 
 	/*    char* name;
     int points;
     */
-    printf("Name: %s and score: %p", student1->name, student1->points);
+    if (D-> size > 0){ // if size is greater than 0
+        printf("Name: \"%s\" and score: \"%d\"\n", student1->name, student1->points);
+    }
 }
 
 void create_student_pointers(int c){
