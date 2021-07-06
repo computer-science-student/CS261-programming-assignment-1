@@ -56,6 +56,7 @@ int main() {
 	return 0;
 }
 
+
 // Initialize dynamic array. This is like a constructor.
 void init(int c) {
     //printf("58\n");
