@@ -194,6 +194,10 @@ void test() {
 
     disp();
 
+    struct student *student2;
+    student2 = (struct student *)malloc(sizeof(struct student));
+    student2->name = "Zero";
+
     // Make a second student.
 
 
