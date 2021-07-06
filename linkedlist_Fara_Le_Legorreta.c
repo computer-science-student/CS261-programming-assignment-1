@@ -13,10 +13,11 @@ struct Node{//Node of a doubly linked list
 struct Node* head;
 struct Node* tail;
 
+// function prototypes
 void insert(struct Node*, struct Node*, struct Node*);
 void delete(struct Node*, struct Node*, struct Node*);
-void _insert1(struct Node*);
-void _insert2(struct Node*, struct Node*, struct Node*);
+void _insert1(struct Node*); // front
+void _insert2(struct Node*, struct Node*, struct Node*); // mid and back
 void _delete1();
 void _delete2(struct Node*, struct Node*, struct Node*);
 void _delete3(struct Node*, struct Node*);
@@ -130,4 +131,6 @@ void disp(){
 }
 // I'LL WORK ON THIS FUNCTION LATER AND THEN COMPILE IT TO SEE IF MY LOGIC IS RIGHT
 void test(){
+
+
 }

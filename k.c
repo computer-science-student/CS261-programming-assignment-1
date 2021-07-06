@@ -34,60 +34,11 @@ int main() {
 	D = malloc(sizeof(struct dynArray));
 	assert(D);
  	init(4);
-
-//	putchar('\n');
-//	printf("student1 location: %p\n", &student1);
-//	printf("student1 contents: %p\n", student1);
-//	printf("student1->name location: %p\n", &(student1->name));
-//      printf("student1->name contents: %s\n", student1->name);
-//	printf("student1->points location: %p\n", &(student1->points));
-//	printf("student1->points contents: %d\n", student1->points);
-
-//	add(student1);
-
-//	struct student *ptr;
-//	ptr = D->data[0];
-
-//	putchar('\n');
-//	printf("D->data[0]: %p\n", D->data[0]);
-//	printf("ptr contents: %p\n", ptr);
-//	printf("ptr->name address: %p\n", &(ptr->name));
-//	printf("ptr->name contents: %s\n", ptr->name);
-//	printf("ptr->points address: %p\n", &(ptr->points));
-//	printf("ptr->points contents: %d\n", ptr->points);
-//	putchar('\n');
-
-//	printf("D->data[0]): %d\n", *(D->data[0]));
-//	printf("D->data[0]->name contents: %s\n", D->data[0]->name);
-
-//	printf("\nJust after add()\n");
-//	printf("D address: %p\n", &D);
-//	printf("D contents: %p\n", D);
-//	printf("D->size address: %p\n", &(D->size));
-//	printf("D->size contents: %d\n", D->size);
-//	printf("D->capacity address: %p\n", &(D->capacity));
-//	printf("D->capacity contents: %d\n", D->capacity);
-//	printf("D->data address: %p\n", &(D->data));
-//	printf("D->data contents: %p\n", D->data);
-//	printf("D->data[0] address: %p\n", &(D->data[0]));
-//	printf("D->data[0] contents: %p\n", D->data[0]);
-//	printf("D->data[0]->points: %d\n", (D->data[0]).points);
-//	printf("D->data[1] address: %p\n", &(D->data[1]));
-//	printf("D->data[1] contents: %p\n", D->data[1]);
-
-//	printf("\nNow running add()\n");
-//	add();
-//	printf("D->data[0] address: %p\n", &(D->data[0]));
-//	printf("D->data[0] contents: %p\n", D->data[0]);
-//	printf("D->data[0]->points address %d\n", D->data[0]->points);
-//	printf("D->data[1] address: %p\n", &(D->data[1]));
-//	printf("D->data[1] contents: %p\n", D->data[1]);
-//	putchar('\n');
-
 	test();
 	cleanup();
-//	disp();
-//	free(D);
+	disp();
+	free(D);
+
 	return 0;
 }
 
@@ -108,7 +59,7 @@ void cleanup() {
 	D->capacity = 0;
 }
 
-/*
+
 void* get(int index) {
 	assert(index >= 0);
 	assert(index < D->size);
@@ -121,7 +72,7 @@ void set(void* value, int index) {
 	assert(index < D->size);
 	D->data[index] = value;
 }
-*/
+
 
 void delete(int index) {
 	assert(index >= 0);
@@ -137,7 +88,7 @@ void delete(int index) {
 void add(void* record) {
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
-	}
+	}	
 	D->data[D->size] = record;
 	D->size++;
 }
@@ -176,12 +127,11 @@ void disp() {
 	int i;
 
 	struct student *ptr;
-
-	putchar('\n');
+	
 	printf("capacity: %d\n", D->capacity);
 	printf("size: %d\n", D->size);
 	for (i=0; i<D->size; i++) {
-		ptr = D->data[i];
+		ptr = D->data[i];		
 		printf("Student %d: ", i);
 		printf("%s, ", ptr->name);
 		printf("%d\n", ptr->points);
@@ -200,9 +150,11 @@ void test() {
 	struct student* student7;
 	struct student* student8;
 	struct student* student9;
+	struct student* student10;
+	struct student* ptr;
 
 	student1 = (struct student *)malloc(sizeof(struct student));
-	student1->name = "Jacque";
+	student1->name = "JACQUE";
 	student1->points = 40;
 
 	student2 = (struct student*)malloc(sizeof(struct student));
@@ -212,7 +164,7 @@ void test() {
 	student3 = (struct student *)malloc(sizeof(struct student));
 	student3->name = "Khanh";
 	student3->points = 99;
-
+	
 	student4 = (struct student *)malloc(sizeof(struct student));
 	student4->name = "Kristine";
 	student4->points = 33;
@@ -224,11 +176,11 @@ void test() {
 	student6 = (struct student *)malloc(sizeof(struct student));
 	student6->name = "Trent";
 	student6->points = 295;
-
+	
 	student7 = (struct student *)malloc(sizeof(struct student));
 	student7->name = "Xi";
-	student7->points = 55;
-
+	student7->points = 55;	
+	
 	student8 = (struct student *)malloc(sizeof(struct student));
 	student8->name = "Bill";
 	student8->points = 1;
@@ -236,15 +188,36 @@ void test() {
 	student9 = (struct student *)malloc(sizeof(struct student));
 	student9->name = "Sarah";
 	student9->points = 15;
+	
+	student10 = (struct student *)malloc(sizeof(struct student));
+	student10->name = "Teresa";
+	student10->points = 92;
 
-
+	putchar('\n');
 	disp();
 	add(student1); add(student2); add(student3); disp();
+	set(student10, 0);
 	add(student4); disp();
 	add(student5); disp();
 	insert(student6, 1); disp();
 	insert(student7, 3); disp();
 	insert(student8, 5); insert(student9, 2); disp();
 	delete(0); disp();
+	ptr = get(0);
+		printf("Get results: %p\n", ptr);
+		printf("Get name: %s\n", ptr->name);
+		printf("Get points: %d\n", ptr->points);
+	putchar('\n');
+
+	free(student1); 
+	free(student2); 
+	free(student3);
+	free(student4);
+	free(student5);
+	free(student6);
+	free(student7);
+	free(student8);
+	free(student9);
+	free(student10);
 }
 
