@@ -92,9 +92,10 @@ void set(void* value, int index) {
 }
 
 void delete(int index) {
-    //printf("93\n");
 	assert(index >= 0);
-	//printf("95\n");
+	// Check to make sure there are more than 0 students.
+	assert(D->size > 0);
+
 	assert(index < D->size);
 	int i;
 	for (i=index+1; i<D->size; i++) {
@@ -172,7 +173,6 @@ void disp() {
       //  printf("Name: \"%s\" and score: \"%d\"\n", student1->name, student1->points);
     //}
 }
-
 
 void test() {
 	disp();
