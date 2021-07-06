@@ -39,14 +39,14 @@ int main() {
 //	printf("student1 location: %p\n", &student1);
 //	printf("student1 contents: %p\n", student1);
 //	printf("student1->name location: %p\n", &(student1->name));
-//      printf("student1->name contents: %s\n", student1->name);	
+//      printf("student1->name contents: %s\n", student1->name);
 //	printf("student1->points location: %p\n", &(student1->points));
 //	printf("student1->points contents: %d\n", student1->points);
 
 //	add(student1);
 
 //	struct student *ptr;
-//	ptr = D->data[0];	
+//	ptr = D->data[0];
 
 //	putchar('\n');
 //	printf("D->data[0]: %p\n", D->data[0]);
@@ -74,9 +74,9 @@ int main() {
 //	printf("D->data[0]->points: %d\n", (D->data[0]).points);
 //	printf("D->data[1] address: %p\n", &(D->data[1]));
 //	printf("D->data[1] contents: %p\n", D->data[1]);
-	
+
 //	printf("\nNow running add()\n");
-//	add(); 
+//	add();
 //	printf("D->data[0] address: %p\n", &(D->data[0]));
 //	printf("D->data[0] contents: %p\n", D->data[0]);
 //	printf("D->data[0]->points address %d\n", D->data[0]->points);
@@ -137,7 +137,7 @@ void delete(int index) {
 void add(void* record) {
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
-	}	
+	}
 	D->data[D->size] = record;
 	D->size++;
 }
@@ -176,12 +176,12 @@ void disp() {
 	int i;
 
 	struct student *ptr;
-	
+
 	putchar('\n');
 	printf("capacity: %d\n", D->capacity);
 	printf("size: %d\n", D->size);
 	for (i=0; i<D->size; i++) {
-		ptr = D->data[i];		
+		ptr = D->data[i];
 		printf("Student %d: ", i);
 		printf("%s, ", ptr->name);
 		printf("%d\n", ptr->points);
@@ -212,7 +212,7 @@ void test() {
 	student3 = (struct student *)malloc(sizeof(struct student));
 	student3->name = "Khanh";
 	student3->points = 99;
-	
+
 	student4 = (struct student *)malloc(sizeof(struct student));
 	student4->name = "Kristine";
 	student4->points = 33;
@@ -224,11 +224,11 @@ void test() {
 	student6 = (struct student *)malloc(sizeof(struct student));
 	student6->name = "Trent";
 	student6->points = 295;
-	
+
 	student7 = (struct student *)malloc(sizeof(struct student));
 	student7->name = "Xi";
-	student7->points = 55;	
-	
+	student7->points = 55;
+
 	student8 = (struct student *)malloc(sizeof(struct student));
 	student8->name = "Bill";
 	student8->points = 1;
@@ -236,7 +236,7 @@ void test() {
 	student9 = (struct student *)malloc(sizeof(struct student));
 	student9->name = "Sarah";
 	student9->points = 15;
-	
+
 
 	disp();
 	add(student1); add(student2); add(student3); disp();
