@@ -105,17 +105,16 @@ void delete(int index) {
 
 
 void _resize(int c) {
-    /*
 	int i;
-	int* newdata = (int *)malloc(c * sizeof(int)); // always typecast malloc
-	printf("108\n");
+	void** newdata = malloc(c * sizeof(struct student)); // always typecast malloc
+	//printf("108\n");
 	assert(newdata);
 	D->capacity = c;
 	for (i=0; i<D->size; i++) {
 		newdata[i] = D->data[i];
 	}
 	free(D->data);
-	D->data = newdata;*/
+	D->data = newdata;
 }
 
 void insert(void* value, int index) {
@@ -177,42 +176,44 @@ void disp() {
 
 void test() {
 	disp();
-	// The parameters to add should be void*.
-	// type arrayName [ arraySize ];
-	//create_student_pointers(D->capacity); // commented this out because not sure what it is for.
 
-	//struct student *ptr;
-    // Add the data for this student!
-    // Put the global student pointers.
-    struct student *student1; // student1 is a student pointer
-    student1 = (struct student *)malloc(sizeof(struct student)); // free this later.
-    student1->name = "Jacque";
-    student1->points = 40;
-    //printf("Before add\n");
-    add(student1);
-    //printf("After add\n");
+	struct student* student1;
+	struct student* student2;
+	struct student* student3;
 
-    disp();
+	student1 = (struct student *)malloc(sizeof(struct student));
+	student1->name = "Jacque";
+	student1->points = 99;
 
-    struct student *student2;
-    student2 = (struct student *)malloc(sizeof(struct student));
-    student2->name = "Zero";
+	student2 = (struct student*)malloc(sizeof(struct student));
+	student2->name = "Tyler";
+	student2->points = 100;
 
-    // Make a second student.
+	student3 = (struct student *)malloc(sizeof(struct student));
+	student3->name = "Khanh";
+	student3->points = 101;
 
+	add(student1); add(student2); add(student3); disp();
 
+	struct student* student4;
+	struct student* student5;
 
-	//add(); add(); add(); disp();
-/*	add(40); disp();
-	add(50); add(60);
-	insert(15, 1); disp();
-	insert(25, 3); disp();
-	insert(35, 5); disp();
-	add(70); disp();*/
-	delete(0); //disp();
+	student4 = (struct student *)malloc(sizeof(struct student));
+	student4->name = "Kristine";
+	student4->points = 33;
 
+	student5 = (struct student *)malloc(sizeof(struct student));
+	student5->name = "Jacob";
+	student5->points = 0;
 
-	// free student1 from the heap.
-	assert(student1);
-	free(student1);
+	add(student4); disp();
+	add(student5); disp();
+
+//	add("Bob", 80); disp();
+//	add("Katherine", 90); disp();
+//	insert(15, 1); disp();
+//	insert(25, 3); disp();
+//	insert(35, 5); disp();
+//	add(70); disp();
+//	delete(0); disp();
 }
