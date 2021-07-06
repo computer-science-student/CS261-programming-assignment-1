@@ -121,7 +121,7 @@ void set(void* value, int index) {
 	assert(index < D->size);
 	D->data[index] = value;
 }
-
+*/
 
 void delete(int index) {
 	assert(index >= 0);
@@ -132,15 +132,12 @@ void delete(int index) {
 	}
 	D->size--;
 }
-*/
+
 
 void add(void* record) {
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
-	}
-	
-//	struct student *(D->data[D->size]);
-
+	}	
 	D->data[D->size] = record;
 	D->size++;
 }
@@ -158,10 +155,11 @@ void _resize(int c) {
 	D->data = newdata;
 }
 
-/*
+
 void insert(void* value, int index) {
 	assert(index >= 0);
 	assert(index < D->size);
+
 	int i;
 	if (D->size == D->capacity) {
 		_resize(D->capacity*2);
@@ -172,7 +170,6 @@ void insert(void* value, int index) {
 	D->data[index] = value;
 	D->size++;
 }
-*/
 
 
 void disp() {
@@ -194,11 +191,15 @@ void disp() {
 
 
 void test() {
-	disp();
-	
 	struct student* student1;
 	struct student* student2;
 	struct student* student3;
+	struct student* student4;
+	struct student* student5;
+	struct student* student6;
+	struct student* student7;
+	struct student* student8;
+	struct student* student9;
 
 	student1 = (struct student *)malloc(sizeof(struct student));
 	student1->name = "Jacque";
@@ -212,11 +213,6 @@ void test() {
 	student3->name = "Khanh";
 	student3->points = 99;
 	
-	add(student1); add(student2); add(student3); disp();
-
-	struct student* student4;
-	struct student* student5;
-
 	student4 = (struct student *)malloc(sizeof(struct student));
 	student4->name = "Kristine";
 	student4->points = 33;
@@ -225,15 +221,30 @@ void test() {
 	student5->name = "Jacob";
 	student5->points = 0;
 
+	student6 = (struct student *)malloc(sizeof(struct student));
+	student6->name = "Trent";
+	student6->points = 295;
+	
+	student7 = (struct student *)malloc(sizeof(struct student));
+	student7->name = "Xi";
+	student7->points = 55;	
+	
+	student8 = (struct student *)malloc(sizeof(struct student));
+	student8->name = "Bill";
+	student8->points = 1;
+
+	student9 = (struct student *)malloc(sizeof(struct student));
+	student9->name = "Sarah";
+	student9->points = 15;
+	
+
+	disp();
+	add(student1); add(student2); add(student3); disp();
 	add(student4); disp();
 	add(student5); disp();
-
-//	add("Bob", 80); disp();
-//	add("Katherine", 90); disp();
-//	insert(15, 1); disp();
-//	insert(25, 3); disp();
-//	insert(35, 5); disp();
-//	add(70); disp();
-//	delete(0); disp();
+	insert(student6, 1); disp();
+	insert(student7, 3); disp();
+	insert(student8, 5); insert(student9, 2); disp();
+	delete(0); disp();
 }
 
