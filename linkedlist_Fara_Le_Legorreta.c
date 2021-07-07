@@ -127,7 +127,12 @@ void _delete1(){//delete first node
   free(curr);//delete the node.
 }
 
-void _delete2(struct Node* curr, struct Node* pred, struct Node* adjc){//delete at middle
+void _delete2(struct Node* curr, struct Node* adjc){//delete at middle
+    // get pred
+    //struct Node* pred = curr->prev;
+
+
+
     pred->next = adjc->prev; //make the next of previous node points to the same place as the deletemed node
     adjc->prev = curr->next; //make the prev of the node next to the delete node points to the node preiouvs to delete node
     free(curr);
