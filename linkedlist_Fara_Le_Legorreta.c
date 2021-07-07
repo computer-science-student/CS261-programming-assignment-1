@@ -66,9 +66,10 @@ void _insert1(struct Node* curr){//insert node at the front
 void _insert2(struct Node* curr, struct Node *pred){//adjc is the node next to current node
     if(tail == pred){//if added at the end of the list
       printf("insert 2 end called\n");//insert after
-     curr->next = pred->next;
+     // curr->next = pred->next; // I commented this out because curr->next = NULL;
      pred->next = curr;
      curr->prev = pred;
+     curr->next = NULL; // set the next to be NULL
      tail = curr;
       //tail->next= curr;
       //curr->prev= tail;
