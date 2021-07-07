@@ -100,17 +100,17 @@ void _delete1(){//delete first node
   // Create a node pointer pointing to the 2nd node of the list.
 
   // Check to make sure that there are ANY nodes at all.
+  //printf("Deleting: %d\n", curr->data);
   if (head == NULL){
     printf("The linked list doesn't have nodes.\n");
     return;
   }
-  printf("");
 
   struct Node* next = curr->next;
   //printf();
 
 
-  if(curr->next = NULL){//if there is only 1 node
+  if(curr->next == NULL){//if there is only 1 node
   printf("Delete func for only 1 node called\n");
     head = tail = NULL; //reset to inital condition
   }
@@ -161,6 +161,7 @@ void disp(){
 }
 
 void test(){
+
     //create the first node
     struct Node* n1 = malloc(sizeof(struct Node));
     //create Node n1
