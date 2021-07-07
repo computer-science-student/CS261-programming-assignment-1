@@ -100,11 +100,12 @@ void _delete1(){//delete first node
   printf("Delete func for only 1 node called\n");
     head = tail = NULL; //reset to inital condition
   }
-  else{//more than 1 deleted node
+  else{//more than 1. Delete first node
     printf("Delete func for more than 1 node called\n");
-  head = curr->next; //make the head pointer point to the same place as the next pointer of the delete node
+    head = curr->next; //make the head pointer point to the same place as the next pointer of the delete node
+
   }
-  free(curr);//delete the node
+  free(curr);//delete the node. Isn't this just for mallocs?
 }
 
 void _delete2(struct Node* curr, struct Node* pred, struct Node* adjc){//delete at middle
@@ -180,5 +181,6 @@ void test(){
     insert(n5, n3);
     disp();
     //delete(n1, NULL); disp();
+    _delete1(); disp();
 
 }
