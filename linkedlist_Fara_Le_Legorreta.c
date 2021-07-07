@@ -96,16 +96,34 @@ void insert(struct Node* curr, struct Node* pred){
 
 void _delete1(){//delete first node
   struct Node* curr = head; //create a node pointer pointing to the 1st node of the list
+  // Create a node pointer pointing to the 2nd node of the list.
+
+  // Check to make sure that there are ANY nodes at all.
+  if (head == NULL){
+    printf("The linked list doesn't have nodes.\n");
+    return;
+  }
+  printf("");
+
+  struct Node* next = curr->next;
+  //printf();
+
+
   if(curr->next = NULL){//if there is only 1 node
   printf("Delete func for only 1 node called\n");
     head = tail = NULL; //reset to inital condition
   }
   else{//more than 1. Delete first node
     printf("Delete func for more than 1 node called\n");
-    head = curr->next; //make the head pointer point to the same place as the next pointer of the delete node
+    // make the second node in the list have a previous val of null
+
+    //head = curr->next; //make the head pointer point to the same place as the next pointer of the delete node
+    head = next; // I am not sure why this doesn't work. It deletes the whole tree
+    // set next node to be the null
+    next->prev = NULL;
 
   }
-  free(curr);//delete the node. Isn't this just for mallocs?
+  free(curr);//delete the node.
 }
 
 void _delete2(struct Node* curr, struct Node* pred, struct Node* adjc){//delete at middle
@@ -181,6 +199,11 @@ void test(){
     insert(n5, n3);
     disp();
     //delete(n1, NULL); disp();
+    _delete1(); disp();
+    _delete1(); disp();
+    _delete1(); disp();
+    _delete1(); disp();
+    _delete1(); disp();
     _delete1(); disp();
 
 }
