@@ -19,8 +19,8 @@ void _insert1(struct Node*);
 void _insert2(struct Node*, struct Node*);
 void _insert3(struct Node*, struct Node*, struct Node*);
 void _delete1();
-void _delete2(struct Node*, struct Node*, struct Node*);
-void _delete3(struct Node*, struct Node*);
+void _delete2(struct Node*, struct Node*); // I got rid of one of these parameters.
+//void _delete3(struct Node*, struct Node*);
 void init();
 void cleanup();
 void disp();
@@ -132,17 +132,16 @@ void _delete2(struct Node* curr, struct Node* adjc){//delete at middle
     //struct Node* pred = curr->prev;
 
 
-
     pred->next = adjc->prev; //make the next of previous node points to the same place as the deletemed node
     adjc->prev = curr->next; //make the prev of the node next to the delete node points to the node preiouvs to delete node
     free(curr);
 }
-
+/*
 void _delete3(struct Node* curr, struct Node* pred){//delete at end
     pred->next = NULL;
     tail = pred->prev; //make tail point to previous node
     free(curr);
-}
+}*/
 
 void delete(struct Node* curr, struct Node* pred, struct Node* adjc){
     if( pred == NULL){//node at head
