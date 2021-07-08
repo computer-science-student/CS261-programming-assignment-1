@@ -65,6 +65,8 @@ void init(int c) {
 }
 
 
+// Free all the data from the heap.
+// Set size and capacity to 0.
 void cleanup() {
 	assert(D->data);
 	free(D->data);
@@ -90,6 +92,8 @@ void set(void* value, int index) {
 
 void delete(int index) {
 	assert(index >= 0);
+	// Check to make sure there are more than 0 students.
+	assert(D->size > 0); // Is this the correct way to check if there are 0 students?
 
 	assert(index < D->size);
 	int i;

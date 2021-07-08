@@ -76,17 +76,13 @@ void add(void* student1) { // Is this parameter correctly written?
 }
 
 void* get(int index) {
-    printf("77\n");
 	assert(index >= 0);
-	printf("79\n");
 	assert(index < D->size);
 	return D->data[index];
 }
 
 void set(void* value, int index) {
-    printf("85\n");
 	assert(index >= 0);
-	printf("87\n");
 	assert(index < D->size);
 	D->data[index] = value;
 }
@@ -137,7 +133,6 @@ void insert(void* value, int index) {
 // Free all the data from the heap.
 // Set size and capacity to 0.
 void cleanup() {
-    //printf("137\n");
 	assert(D->data);
 	free(D->data);
 
