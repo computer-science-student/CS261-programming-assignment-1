@@ -145,11 +145,16 @@ void disp() {
 
 	printf("capacity: %d\n", D->capacity);
 	printf("size: %d\n", D->size);
+//	for (i=0; i<D->size; i++) {
+//		ptr = D->data[i];
+//		printf("Student %d: ", i);
+//		printf("%s, ", ptr->name);
+//		printf("%d\n", ptr->points);
+//	}
 	for (i=0; i<D->size; i++) {
-		ptr = D->data[i];
-		printf("Student %d: ", i);
-		printf("%s, ", ptr->name);
-		printf("%d\n", ptr->points);
+        printf("Student %d: ", i);
+		printf("%s, ", ((struct student*)D->data[i])->name);
+		printf("%d\n", ((struct student*)D->data[i])->points);
 	}
 	putchar('\n');
 }
