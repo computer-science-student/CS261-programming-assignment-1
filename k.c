@@ -214,21 +214,21 @@ void test() {
 
 	putchar('\n');
 	disp();
-	add(student1); add(student2); add(student3); disp();
-	set(student10, 0);
+	add(student1); add(student2); add(student3); disp(); // testing add
+	set(student10, 0); // Testing set. Changed student entirely.
 	add(student4); disp();
-	add(student5); disp();
-	insert(student6, 1); disp();
+	add(student5); disp(); // Tested _resize().
+	insert(student6, 1); disp(); // Testing insert. Put student in the place.
 	insert(student7, 3); disp();
 	insert(student8, 5); insert(student9, 2); disp();
-	delete(0); disp();
+	delete(0); disp(); // Testing delete
 	ptr = get(0);
 		printf("Get results: %p\n", ptr);
 		printf("Get name: %s\n", ptr->name);
 		printf("Get points: %d\n", ptr->points);
 	putchar('\n');
 
-	free(student1);
+	free(student1); // Deleting the students from the heap here.
 	free(student2);
 	free(student3);
 	free(student4);
