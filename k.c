@@ -64,7 +64,6 @@ void init(int c) {
 	D->data = malloc(D->capacity * sizeof(struct student*));
 }
 
-
 // Free all the data from the heap.
 // Set size and capacity to 0.
 void cleanup() {
@@ -175,7 +174,7 @@ void test() {
 
 	student1 = (struct student *)malloc(sizeof(struct student));
 	student1->name = "JACQUE";
-	student1->points = 40;
+	student1->points = 100;
 
 	student2 = (struct student*)malloc(sizeof(struct student));
 	student2->name = "Tyler";
@@ -183,7 +182,7 @@ void test() {
 
 	student3 = (struct student *)malloc(sizeof(struct student));
 	student3->name = "Khanh";
-	student3->points = 99;
+	student3->points = 100;
 
 	student4 = (struct student *)malloc(sizeof(struct student));
 	student4->name = "Kristine";
