@@ -143,9 +143,11 @@ void insert(void* value, int index) {
 
 
 void disp() {
+    // Displays the students.
+    // now the data is a structure of students.
 	int i;
 
-	struct student *ptr;
+	struct student *ptr; // this use to be here
 
 	printf("capacity: %d\n", D->capacity);
 	printf("size: %d\n", D->size);

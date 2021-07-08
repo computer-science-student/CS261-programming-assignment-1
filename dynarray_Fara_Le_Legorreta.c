@@ -104,7 +104,6 @@ void delete(int index) {
 void _resize(int c) {
 	int i;
 	void** newdata = malloc(c * sizeof(struct student)); // always typecast malloc
-	//printf("108\n");
 	assert(newdata);
 	D->capacity = c;
 	for (i=0; i<D->size; i++) {
@@ -115,7 +114,6 @@ void _resize(int c) {
 }
 
 void insert(void* value, int index) {
-    //printf("119\n");
 	assert(index >= 0);
 	printf("121\n");
 	assert(index < D->size);
